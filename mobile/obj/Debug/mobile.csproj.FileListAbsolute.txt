@@ -1,0 +1,7 @@
+\\fsstu02d\stu2n3\Home\Kshukla2519\Study material\Term 2\NET\KaranShukla_FinalProject\mobile\bin\mobile.dll.config
+\\fsstu02d\stu2n3\Home\Kshukla2519\Study material\Term 2\NET\KaranShukla_FinalProject\mobile\bin\mobile.dll
+\\fsstu02d\stu2n3\Home\Kshukla2519\Study material\Term 2\NET\KaranShukla_FinalProject\mobile\bin\mobile.pdb
+\\fsstu02d\stu2n3\Home\Kshukla2519\Study material\Term 2\NET\KaranShukla_FinalProject\mobile\obj\Debug\mobile.csprojAssemblyReference.cache
+\\fsstu02d\stu2n3\Home\Kshukla2519\Study material\Term 2\NET\KaranShukla_FinalProject\mobile\obj\Debug\mobile.csproj.CoreCompileInputs.cache
+\\fsstu02d\stu2n3\Home\Kshukla2519\Study material\Term 2\NET\KaranShukla_FinalProject\mobile\obj\Debug\mobile.dll
+\\fsstu02d\stu2n3\Home\Kshukla2519\Study material\Term 2\NET\KaranShukla_FinalProject\mobile\obj\Debug\mobile.pdb

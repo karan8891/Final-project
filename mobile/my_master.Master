@@ -1,0 +1,292 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="my_master.master.cs" Inherits="mobile.my_master" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>My Mobile Showroom</title>
+	<!--/tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<script type="text/javascript">
+	    addEventListener("load", function () {
+	        setTimeout(hideURLbar, 0);
+	    }, false);
+
+	    function hideURLbar() {
+	        window.scrollTo(0, 1);
+	    }
+	</script>
+	<!--//tags -->
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/font-awesome.css" rel="stylesheet"/>
+	<!--pop-up-box-->
+	<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+	<!--//pop-up-box-->
+	<!-- price range -->
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui1.css"/>
+	<!-- fonts -->
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<!-- top-header -->
+	<div class="header-most-top">
+		<p>Your preference is first!</p>
+	</div>
+	
+	
+	<div class="header-bot">
+		<div class="header-bot_inner_wthreeinfo_header_mid">
+			
+			<div class="col-md-4 logo_agile">
+				<h1>
+					<a href="Default.aspx">
+						<span>M</span>obi
+						<span>T</span>ech
+                        
+
+					</a>
+				</h1>
+			</div>
+			
+			<div class="col-md-8 header">
+				<!-- header lists -->
+				<ul>
+					
+						<li><asp:HyperLink ID="HyperLink1" runat="server" Visible="False" >L</asp:HyperLink></li>
+				
+					<li>
+						<span class="fa fa-phone" aria-hidden="true"></span> +1 (416) 991-5322
+					</li>
+					
+						<li><asp:HyperLink ID="HyperLink3" runat="server" Visible="False" >L</asp:HyperLink></li>
+					
+						<li><asp:HyperLink ID="HyperLink4" runat="server" Visible="False" >L</asp:HyperLink></li>
+					
+				</ul>
+				<!-- //header lists -->
+				
+				<!-- cart details -->
+				<div class="top_nav_right">
+					<div class="wthreecartaits wthreecartaits2 cart cart box_1">
+						
+                        <asp:HyperLink ID="HyperLink9" runat="server" class="w3view-cart" Visible="False"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> - <%= cart_tot%> Items</asp:HyperLink>
+						
+					</div>
+				</div>
+				<!-- //cart details -->
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<marquee style="background-color:#808080; color:#fff">Ongoing Sale : Upto 40% off</marquee>
+	<!-- navigation -->
+	<div class="ban-top">
+		<div class="container">
+			
+			<div class="top_nav_left">
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+							    aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<!-- Collecting the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav menu__list">
+								<li><asp:HyperLink ID="HyperLink5" runat="server" Visible="False" >L</asp:HyperLink></li>
+								<li><asp:HyperLink ID="HyperLink6" runat="server" Visible="False" >L</asp:HyperLink></li>
+                                <li><asp:HyperLink ID="HyperLink7" runat="server" Visible="False" >L</asp:HyperLink></li>
+                                <li><asp:HyperLink ID="HyperLink8" runat="server" Visible="False" >L</asp:HyperLink></li>
+								<li><asp:HyperLink ID="HyperLink11" runat="server" Visible="False" >L</asp:HyperLink></li>
+								<li><asp:HyperLink ID="HyperLink2" runat="server" Visible="False" >L</asp:HyperLink></li>
+								<li class="dropdown">
+									
+                                    <asp:HyperLink ID="HyperLink10" runat="server" class="nav-stylehead dropdown-toggle" data-toggle="dropdown" >All Products <b class="caret"></b></asp:HyperLink>
+									<ul class="dropdown-menu agile_short_dropdown">
+										<asp:Repeater ID="rptdept" runat="server" DataSourceID="SqlDataSource1">
+                                                <ItemTemplate>
+                                                <li><a href='all_sub_catg.aspx?category_sno=<%# Eval("id") %>'><span><%# Eval("category") %></span></a></li>
+                                                </ItemTemplate>
+                                        </asp:Repeater>
+                                    </ul>
+										    
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                                        ConnectionString="<%$ ConnectionStrings:sqlconnection %>" 
+                                        SelectCommand="SELECT * FROM [category]"></asp:SqlDataSource>
+								
+								</li>
+								
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<!-- navigation -->
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+	
+	<!-- copyright -->
+	<div class="copy-right">
+		<div class="container">
+			<p>© 2019 | All rights reserved | Design by 
+				<a href="https://www.facebook.com/karananand.shukla" target="_blank">Karan Anand Shukla</a>
+			</p>
+		</div>
+	</div>
+	<!-- //copyright -->
+
+	<!-- js-files -->
+	<!-- jquery -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<!-- //jquery -->
+
+	<!-- popup modal (for signin & signup)-->
+	<script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
+	<script type="text/javascript">
+	    $(document).ready(function () {
+	        $('.popup-with-zoom-anim').magnificPopup({
+	            type: 'inline',
+	            fixedContentPos: false,
+	            fixedBgPos: true,
+	            overflowY: 'auto',
+	            closeBtnInside: true,
+	            preloader: false,
+	            midClick: true,
+	            removalDelay: 300,
+	            mainClass: 'my-mfp-zoom-in'
+	        });
+
+	    });
+	</script>
+
+	<script src="js/minicart.js"></script>
+	<script type="text/C#">
+	    paypalm.minicartk.render(); //use only unique class names other than paypal1.minicart1.Also Replace same class name in css and minicart.min.js
+
+	    paypalm.minicartk.cart.on('checkout', function (evt) {
+	        var items = this.items(),
+				len = items.length,
+				total = 0,
+				i;
+
+	        // Count the number of each item in the cart
+	        for (i = 0; i < len; i++) {
+	            total += items[i].get('quantity');
+	        }
+
+	        if (total < 3) {
+	            alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
+	            evt.preventDefault();
+	        }
+	    });
+	</script>
+	<!-- //cart-js -->
+
+	
+	<!-- smoothscroll -->
+	<script type="text/javascript" src="js/SmoothScroll.min.js"></script>
+	<!-- //smoothscroll -->
+
+	<!-- start-smooth-scrolling -->
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+	    jQuery(document).ready(function ($) {
+	        $(".scroll").click(function (event) {
+	            event.preventDefault();
+
+	            $('html,body').animate({
+	                scrollTop: $(this.hash).offset().top
+	            }, 1000);
+	        });
+	    });
+	</script>
+	<!-- //end-smooth-scrolling -->
+
+	<!-- smooth-scrolling-of-move-up -->
+	<script type="text/javascript">
+	    $(document).ready(function () {
+	        
+	        $().UItoTop({
+	            easingType: 'easeOutQuart'
+	        });
+
+	    });
+	</script>
+	<!-- //smooth-scrolling-of-move-up -->
+
+    <!-- imagezoom -->
+	<script type="text/javascript" src="js/imagezoom.js"></script>
+	<!-- //imagezoom -->
+
+	<!-- FlexSlider -->
+	<script type="text/javascript" src="js/jquery.flexslider.js"></script>
+	<script type="text/javascript">
+	    // Can also be used with $(document).ready()
+	    $(window).load(function () {
+	        $('.flexslider').flexslider({
+	            animation: "slide",
+	            controlNav: "thumbnails"
+	        });
+	    });
+	</script>
+	<!-- //FlexSlider-->
+
+	<!-- flexisel (for special offers) -->
+	<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+	<script type="text/javascript">
+	    $(window).load(function () {
+	        $("#flexiselDemo1").flexisel({
+	            visibleItems: 3,
+	            animationSpeed: 1000,
+	            autoPlay: true,
+	            autoPlaySpeed: 3000,
+	            pauseOnHover: true,
+	            enableResponsiveBreakpoints: true,
+	            responsiveBreakpoints: {
+	                portrait: {
+	                    changePoint: 480,
+	                    visibleItems: 1
+	                },
+	                landscape: {
+	                    changePoint: 640,
+	                    visibleItems: 2
+	                },
+	                tablet: {
+	                    changePoint: 768,
+	                    visibleItems: 2
+	                }
+	            }
+	        });
+
+	    });
+	</script>
+	<!-- //flexisel (for special offers) -->
+
+	<!-- for bootstrap working -->
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<!-- //for bootstrap working -->
+	<!-- //js-files -->
+
+</body>
+
+</html>

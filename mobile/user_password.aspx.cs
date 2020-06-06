@@ -1,0 +1,44 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Configuration;
+using System.Data.SqlClient;
+
+namespace mobile
+{
+    public partial class user_password : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["user_login"] == null)
+            {
+                Response.Redirect("Default.aspx");
+            }
+        }
+
+        protected void change_Click(object sender, EventArgs e)
+        {
+            string email = Convert.ToString(Session["user_login"]);
+            string conn = ConfigurationManager.ConnectionStrings["sqlconnection"].ToString();
+            SqlConnection obj = new SqlConnection(conn);
+            obj.Open();
+            SqlCommand objselect = new SqlCommand("select count(*) from user_signup where email_id='" + email + "' and password='" + o_pass.Text + "'", obj);
+            int a = Convert.ToInt32(objselect.ExecuteScalar().ToString());
+            if (a > 0)
+            {
+                SqlCommand objcmd = new SqlCommand("update user_signup set password = '" + n_pass.Text + "' where email_id = '" + email + "'", obj);
+                objcmd.ExecuteNonQuery();
+                Response.Write(@"<script language='javascript'>alert('PassWord Successfully Changed'); window.location.href='Default.aspx';</script>");
+
+            }
+            else
+            {
+                Response.Write(@"<script language='javascript'>alert('Old Password Is Incorrect');</script>");
+
+            }
+        }
+    }
+}
